@@ -1,6 +1,3 @@
-
-
-
 class Calc
 
  attr_accessor :first_value, :second_value, :operation
@@ -11,7 +8,6 @@ class Calc
     @operation = ''
   end
 
-
   def plus
     @operation = "plus"
     self
@@ -19,43 +15,36 @@ class Calc
 
   def minus
     @operation = "minus"
+    self
   end
 
-  def divide_by
+  def divided_by
     @operation = "divide_by"
+    self
   end
 
   def times
     @operation = "times"
+    self
   end
 
   def calc_it
-    if @operation == 'plus'
-        return @first_value+@second_value
-    end
-    if @operation == 'minus'
-        return @first_value-@second_value
-    end
-    if @operation == 'divide_by'
-        return @first_value/@second_value
-    end
-    if @operation == 'times'
-        return @first_value*@second_value
-    end
+    return @first_value + @second_value if @operation == 'plus'
+    return @first_value - @second_value if @operation == 'minus'
+    return @first_value / @second_value if @operation == 'divide_by'
+    return @first_value * @second_value if @operation == 'times'
   end
-
-
 
 
   def zero
     if @first_value == nil
        @first_value = 0
+       self
     else
       @second_value = 0
       self.calc_it
     end
   end
-
 
   def one
     if @first_value == nil
@@ -70,8 +59,9 @@ class Calc
   def two
     if @first_value == nil
        @first_value = 2
+       self
     else
-      @first_value = 2
+      @second_value = 2
       self.calc_it
     end
   end
@@ -79,8 +69,9 @@ class Calc
   def three
     if @first_value == nil
        @first_value = 3
+       self
     else
-      @first_value = 3
+      @second_value = 3
       self.calc_it
     end
   end
@@ -88,8 +79,9 @@ class Calc
   def four
     if @first_value == nil
        @first_value = 4
+       self
     else
-      @first_value = 4
+      @second_value = 4
       self.calc_it
     end
   end
@@ -97,8 +89,9 @@ class Calc
   def five
     if @first_value == nil
        @first_value = 5
+       self
     else
-      @first_value = 5
+      @second_value = 5
       self.calc_it
     end
   end
@@ -106,8 +99,9 @@ class Calc
   def six
     if @first_value == nil
        @first_value = 6
+       self
     else
-      @first_value = 6
+      @second_value = 6
       self.calc_it
     end
   end
@@ -115,8 +109,9 @@ class Calc
   def seven
     if @first_value == nil
        @first_value = 7
+       self
     else
-      @first_value = 7
+      @second_value = 7
       self.calc_it
     end
   end
@@ -124,8 +119,9 @@ class Calc
   def eight
     if @first_value == nil
        @first_value = 8
+       self
     else
-      @first_value = 8
+      @second_value = 8
       self.calc_it
     end
   end
@@ -133,13 +129,11 @@ class Calc
   def nine
     if @first_value == nil
        @first_value = 9
+       self
     else
-      @first_value = 9
+      @second_value = 9
       self.calc_it
     end
   end
 
 end
-
-fluff = Calc.new.one.plus.one
-p fluff.second_value
