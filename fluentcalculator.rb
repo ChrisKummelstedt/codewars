@@ -1,10 +1,9 @@
+
+
+
 class Calc
 
-
-  Calc.new.one.plus.two
-
  attr_accessor :first_value, :second_value, :operation
-
 
   def initialize
     @first_value = nil
@@ -14,14 +13,35 @@ class Calc
 
 
   def plus
-    @operation = ''
+    @operation = "plus"
+    self
+  end
+
+  def minus
+    @operation = "minus"
+  end
+
+  def divide_by
+    @operation = "divide_by"
+  end
+
+  def times
+    @operation = "times"
   end
 
   def calc_it
-
     if @operation == 'plus'
-
-
+        return @first_value+@second_value
+    end
+    if @operation == 'minus'
+        return @first_value-@second_value
+    end
+    if @operation == 'divide_by'
+        return @first_value/@second_value
+    end
+    if @operation == 'times'
+        return @first_value*@second_value
+    end
   end
 
 
@@ -31,7 +51,7 @@ class Calc
     if @first_value == nil
        @first_value = 0
     else
-      @first_value = 0
+      @second_value = 0
       self.calc_it
     end
   end
@@ -40,8 +60,9 @@ class Calc
   def one
     if @first_value == nil
        @first_value = 1
+       self
     else
-      @first_value = 1
+      @second_value = 1
       self.calc_it
     end
   end
@@ -119,3 +140,6 @@ class Calc
   end
 
 end
+
+fluff = Calc.new.one.plus.one
+p fluff.second_value
